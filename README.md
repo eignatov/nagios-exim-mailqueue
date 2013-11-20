@@ -27,25 +27,49 @@ define service{
 
 Server Client 01
 -----------------
-1.
-`/usr/local/nagios/etc/nrpe.cfg`
 
-2.
+Configuración del servidor cliente que queremos motinoriar.
+
+
+> Editamos el archivo de Comando de nagios para el NRPE y agregamos el plugin php
+
+`nano /usr/local/nagios/etc/nrpe.cfg`
+
+> Pegamos esta linea al final de todos los comandos
+
 `command[check_mailqueue]=/usr/local/nagios/libexec/check_mailqueue.php`
 
-3.
+> Reiniciamos los servicios del NRPE (Esto fue realizado en Centos)
+
 `service xinetd restart`
+
 
 Notes
 -----
 
+...En esta configuración del plugin necesitamos configuraciones adicionales 
+...para que el sistema operativo nos de permiso de ejecución.
+
+
 Server Client
 ---------------
 
-1.
+...En el servidor cliente en donde instalamos nuestro plugin necesitamos hacer 
+...estas modificaciones en el archivo /etc/sudoers
+
+> Editamos el archivo
+
 `nano /etc/sudoers`
 
-`
+> Colocamos estas lineas al final del archivo
+> La primera linea nos permite darle permiso al usuario nagios para utilizar las TTY
+> La segunda linea le damos permiso al usuario nagios para la ejecución de /usr/sbin/exim
+
+```
 Defaults:nagios !requiretty
 nagios ALL=NOPASSWD:/usr/sbin/exim
-`
+```
+
+... Realizado por 
+... Esteban Borgues [NginxTips.com](https://www.nginxtips.com)
+... Andrés Rosales [howtophp.net](https://www.howtophp.net)
