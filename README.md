@@ -73,4 +73,4 @@ Realizado por
 
 > Esteban Borgues [NginxTips.com](https://www.nginxtips.com)
 
-> Andrés Rosales [howtophp.net](https://www.howtophp.net)
+> Andrés Rosales [howtophp.net](https://howtophp.net)
