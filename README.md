@@ -4,7 +4,7 @@ Plugin para enviar a nagios nuestra cola de salida de correo con Exim.
 
 ##Server Nagios##
 
-En el servidor en donde estamos ejecutando nagios debemos primero el comando que se define de la siguiente manera
+> En el servidor en donde estamos ejecutando nagios debemos primero el comando que se define de la siguiente manera
 
 > Editamos el archivo de Comando de nagios
 
@@ -47,15 +47,13 @@ Configuración del servidor cliente que queremos motinoriar.
 Notes
 -----
 
-...En esta configuración del plugin necesitamos configuraciones adicionales 
-...para que el sistema operativo nos de permiso de ejecución.
+> En esta configuración del plugin necesitamos configuraciones adicionales para que el sistema operativo nos de permiso de ejecución.
 
 
 Server Client
 ---------------
 
-...En el servidor cliente en donde instalamos nuestro plugin necesitamos hacer 
-...estas modificaciones en el archivo /etc/sudoers
+> En el servidor cliente en donde instalamos nuestro plugin necesitamos hacer estas modificaciones en el archivo /etc/sudoers
 
 > Editamos el archivo
 
@@ -70,6 +68,8 @@ Defaults:nagios !requiretty
 nagios ALL=NOPASSWD:/usr/sbin/exim
 ```
 
-... Realizado por 
-... Esteban Borgues [NginxTips.com](https://www.nginxtips.com)
-... Andrés Rosales [howtophp.net](https://www.howtophp.net)
+Realizado por 
+---------------
+
+> Esteban Borgues [NginxTips.com](https://www.nginxtips.com)
+> Andrés Rosales [howtophp.net](https://www.howtophp.net)
