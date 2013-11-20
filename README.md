@@ -2,7 +2,7 @@
 
 Plugin para enviar a nagios nuestra cola de salida de correo con Exim.
 
-##OS##
+##Test OS##
 
 ![alt text](https://cdn2.iconfinder.com/data/icons/fatcow/32x32/centos.png "Centos")
 
