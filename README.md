@@ -19,13 +19,13 @@ service nagios restart
 Server Client 01
 -----------------
 1.
-/usr/local/nagios/etc/nrpe.cfg
+`/usr/local/nagios/etc/nrpe.cfg`
 
 2.
-command[check_mailqueue]=/usr/local/nagios/libexec/check_mailqueue.php
+`command[check_mailqueue]=/usr/local/nagios/libexec/check_mailqueue.php`
 
 3.
-service xinetd restart
+`service xinetd restart`
 
 Notes
 -----
@@ -34,6 +34,9 @@ Server Client
 ---------------
 
 1.
-nano /etc/sudoers
+`nano /etc/sudoers`
+
+`
 Defaults:nagios !requiretty
 nagios ALL=NOPASSWD:/usr/sbin/exim
+`
