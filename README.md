@@ -2,6 +2,10 @@
 
 Plugin para enviar a nagios nuestra cola de salida de correo con Exim.
 
+##OS##
+
+![alt text](https://cdn2.iconfinder.com/data/icons/fatcow/32x32/centos.png "Centos")
+
 ##Server Nagios##
 
 > En el servidor en donde estamos ejecutando nagios debemos primero el comando que se define de la siguiente manera
