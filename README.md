@@ -13,11 +13,13 @@ Plugin para enviar a nagios nuestra cola de salida de correo con Exim.
 > ES: En el servidor en donde estamos ejecutando nagios debemos primero el comando que se define de la siguiente manera
 
 > ES: Editamos el archivo de Comando de nagios
+
 > EN: On your main Nagios sever, define the service as shown below:
 
 `nano /usr/local/nagios/etc/objects/commands.cfg`
 
 > En: Colocamos nuestro nuevo Servicio
+
 > EN: Define the service:
 
 ```
@@ -29,6 +31,7 @@ define service{
 }
 ```
 > ES: Reiniciamos Nagios para que tome los cambios
+
 > En: Restart nagios: 
 
 `service nagios restart`
@@ -40,16 +43,19 @@ Server Client 01 : On your remote client server (nrpe)
 Configuración del servidor cliente que queremos motinoriar.
 
 > ES: Editamos el archivo de Comando de nagios para el NRPE y agregamos el plugin php
+
 > EN: Edit the nrpe configuration file
 
 `nano /usr/local/nagios/etc/nrpe.cfg`
 
 > ES: Pegamos esta linea al final de todos los comandos
+
 > EN: Add this line at the end of the file
 
 `command[check_mailqueue]=/usr/local/nagios/libexec/check_mailqueue.php`
 
 > ES: Reiniciamos los servicios del NRPE (Esto fue realizado en Centos)
+
 > EN: Restart nrpe daemon (because it depends on xinetd):
 
 `service xinetd restart`
@@ -73,16 +79,13 @@ your /etc/sudoers file to avoid permission erros:
 
 `nano /etc/sudoers`
 
-> Colocamos estas lineas al final del archivo
+> ES:Colocamos estas lineas al final del archivo
 > La primera linea nos permite darle permiso al usuario nagios para utilizar las TTY
 > La segunda linea le damos permiso al usuario nagios para la ejecución de /usr/sbin/exim
 
-> The first line will prevent nagios user from using TTY. And the second
+> EN: The first line will prevent nagios user from using TTY. And the second
 > one grants permissions to the nagios user to execute /usr/sbin/exim
 > binary file (used to check the mail queue)
-
-> Add this lines:
-
 
 ```
 Defaults:nagios !requiretty
