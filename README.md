@@ -20,10 +20,9 @@ define service{
         check_command                   check_nrpe!check_mailqueue
 }
 ```
+> 3. Reiniciamos Nagios para que tome los cambios
 
-
-3.
-service nagios restart
+`service nagios restart`
 
 
 Server Client 01
