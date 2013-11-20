@@ -1,16 +1,16 @@
-Plugin para enviar a nagios nuestra cola de salida de correo con Exim.
-
 #Nagios Exim MailQueue Plugin#
+
+Plugin para enviar a nagios nuestra cola de salida de correo con Exim.
 
 ##Server Nagios##
 
 En el servidor en donde estamos ejecutando nagios debemos primero el comando que se define de la siguiente manera
 
-> 1. Editamos el archivo de Comando de nagios
+> Editamos el archivo de Comando de nagios
 
 `nano /usr/local/nagios/etc/objects/commands.cfg`
 
-> 2. Colocamos nuestro nuevo Comando
+> Colocamos nuestro nuevo Comando
 
 ```
 define service{
@@ -20,7 +20,7 @@ define service{
         check_command                   check_nrpe!check_mailqueue
 }
 ```
-> 3. Reiniciamos Nagios para que tome los cambios
+> Reiniciamos Nagios para que tome los cambios
 
 `service nagios restart`
 
