@@ -12,14 +12,14 @@ En el servidor en donde estamos ejecutando nagios debemos primero el comando que
 
 > 2. Colocamos nuestro nuevo Comando
 
-`
+```
 define service{
         use                             generic-service
        	host_name                       Client_01
         service_description             Mail Queue
         check_command                   check_nrpe!check_mailqueue
 }
-`
+```
 
 
 3.
