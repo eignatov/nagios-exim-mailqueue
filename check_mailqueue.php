@@ -2,8 +2,7 @@
 <?php
 $number_mails=chop(shell_exec("/usr/bin/sudo /usr/sbin/exim -bpc"));
 
-$correosxdominios = chop(shell_exec('/usr/bin/sudo /usr/sbin/exim -bpr | grep "<" | awk {'."'print $4'".'} |cut -d "<"$
-
+$correosxdominios = chop(shell_exec('/usr/bin/sudo /usr/sbin/exim -bpr | grep "<" | awk {'."'print $4'".'} |cut -d "<" -f 2 | cut -d ">" -f 1 | sort -n | uniq -c| sort -n'));
 $drives = split("[\r|\n]", trim($correosxdominios));
 // Chuck away the unused first line
 array_shift($drives);
