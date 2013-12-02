@@ -2,7 +2,7 @@
 <?php
 $number_mails=chop(shell_exec("/usr/bin/sudo /usr/sbin/exim -bpc"));
 $correosxdominios = chop(shell_exec('/usr/bin/sudo /usr/sbin/exim -bpr | grep "<" | awk {'."'print $4'".'} |cut -d "<" -f 2 | cut -d ">" -f 1 | sort -n | uniq -c| sort -n'));
-$drives = split("[\r|\n]", trim($correosxdominios));
+$drives = preg_split("[\r|\n]", trim($correosxdominios));
 array_shift($drives);
 $salida='';
 foreach ($drives as $key => $line){
@@ -20,6 +20,9 @@ foreach ($drives as $key => $line){
 
 $correosxdominios=$salida;
 switch ($number_mails) {
+        case 0:
+         echo "OK - $number_mails correos en la cola de salida.";
+         exit(0);
         case $number_mails < 200:
         echo "OK - $number_mails correos en la cola de salida.";
         exit(0);
